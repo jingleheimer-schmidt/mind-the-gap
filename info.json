@@ -1,0 +1,13 @@
+{
+  "name": "mind-the-gap",
+  "version": "0.0.1",
+  "title": "Mind The Gap",
+  "author": "asher_sky",
+  "contact": "",
+  "homepage": "",
+  "description": "Watch your step! The void is deadly.",
+  "factorio_version": "1.1",
+  "dependencies": [
+	"base"
+	]
+}
