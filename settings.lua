@@ -11,7 +11,7 @@ local updateFrequency = {
   type = "string-setting",
   name = "void-update-frequency",
   setting_type = "runtime-global",
-  default_value = "10-ticks",
+  default_value = "60-ticks",
   allowed_values = {
     "disabled",
     "10-ticks",

@@ -20,6 +20,7 @@ end
 )
 
 local update_frequencies = {
+  ["disabled"] = 9999999999999999999,
   ["10-ticks"] = 1,
   ["30-ticks"] = 3,
   ["60-ticks"] = 6,
@@ -27,13 +28,15 @@ local update_frequencies = {
   ["240-ticks"] = 24,
   ["480-ticks"] = 48,
 }
-global.counter = 1
 
 script.on_nth_tick(10, function()
+  if not global.counter then
+    global.counter = 1
+  end
   local frequency = settings.global["void-update-frequency"].value
   if frequency == "disabled" then
     return
-  elseif global.counter ~= update_frequencies[frequency] then
+  elseif global.counter < update_frequencies[frequency] then
     global.counter = global.counter + 1
   else
     for a,b in pairs(game.surfaces) do
@@ -45,7 +48,7 @@ script.on_nth_tick(10, function()
         local tile = d.surface.find_tiles_filtered(
         {
           position = d.position,
-          radius = 1,
+          radius = 1.2,
           name = "out-of-map",
           limit = 1,
         })
