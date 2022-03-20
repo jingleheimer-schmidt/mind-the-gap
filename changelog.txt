@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.3
+Date: 20MAR2022
+  Changes:
+    - Rewrote vehicle update script to reduce script impact on large maps
+    - player and vehicle tile collision now uses bounding boxes
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 25DEC2021
   Changes:
